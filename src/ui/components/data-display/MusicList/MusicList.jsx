@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './MusicList.module.css'
+import { TimeService } from '../../../../data/services/TimeService';
 
 export default function MusicList(props) {
     function isSelected(music) {
@@ -14,7 +15,7 @@ export default function MusicList(props) {
                     <div className={styles.info}>
                         <span className={styles.title}>{music.name}</span>
                         <span className={styles.artist}>{music.artist}</span>
-                        <span className={styles.duration}>{music.duration}</span>
+                        <span className={styles.duration}>{TimeService.timeDisplay(music.duration)}</span>
                     </div>
                 </li>
             ))}
