@@ -1,7 +1,6 @@
-// import { useState } from "react";
 import MusicList from "../components/data-display/MusicList/MusicList";
-// import Timeline from "../components/inputs/Timeline/Timeline";
 import Audioplayer from "../components/data-display/AudioPlayer/Audioplayer";
+import styles from "./index.module.css"
 
 const musics = [
     {
@@ -30,12 +29,14 @@ const musics = [
 export default function Index() {
     return (
         <>
-            <MusicList
-                musics={musics}
-                selectedMusic={musics[0]}
-                onSelect={()=> {}}
-            />
-            <Audioplayer music={musics[0]} onComplete={() => {console.log('Finish')}}/>
+            <div className={styles.pageContainer}>
+                <MusicList
+                    musics={musics}
+                    selectedMusic={musics[0]}
+                    onSelect={() => { }}
+                />
+                <Audioplayer music={musics[0]} onComplete={() => { console.log('Finish') }} />
+            </div>
         </>
     )
 }
