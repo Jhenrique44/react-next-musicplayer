@@ -9,7 +9,7 @@ const musics = [
         name: 'Musica 1',
         artist: 'Artista 1',
         duration: 180,
-        url: ""
+        url: "https://open.spotify.com/embed/track/2BZfNi8kEhMY4jVkCRe2IM?utm_source=generator&theme=0"
     },
     {
         id: 2,
@@ -28,7 +28,6 @@ const musics = [
 ]
 
 export default function Index() {
-    // const [width, setWidth] = useState(20);
     return (
         <>
             <MusicList
@@ -36,7 +35,7 @@ export default function Index() {
                 selectedMusic={musics[0]}
                 onSelect={()=> {}}
             />
-            <Audioplayer music={musics[0]}/>
+            <Audioplayer music={musics[0]} onComplete={() => {console.log('Finish')}}/>
         </>
     )
 }

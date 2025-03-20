@@ -15,9 +15,9 @@
     font-size: 25px;
     margin-bottom: 16px;
 }
-.playButton:hover{ 
+/* .playButton:hover{ 
     transform: scale(1.05);
-}
+} */
 .audio { 
-    display: block;
+    display: none;
 }
