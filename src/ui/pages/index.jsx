@@ -1,41 +1,29 @@
 import MusicList from "../components/data-display/MusicList/MusicList";
 import Audioplayer from "../components/data-display/AudioPlayer/Audioplayer";
 import styles from "./index.module.css"
+import { useContext } from "react";
+import { AppContext } from "../../App";
 
-const musics = [
-    {
-        id: 1,
-        name: 'Musica 1',
-        artist: 'Artista 1',
-        duration: 180,
-        url: "https://open.spotify.com/embed/track/2BZfNi8kEhMY4jVkCRe2IM?utm_source=generator&theme=0"
-    },
-    {
-        id: 2,
-        name: 'Musica 2',
-        artist: 'Artista 2',
-        duration: 200,
-        url: ""
-    },
-    {
-        id: 3,
-        name: 'Musica 3',
-        artist: 'Artista 3',
-        duration: 220,
-        url: ""
-    }
-]
 
 export default function Index() {
+    const { selectedMusic,
+        // time,
+        // setTime,
+        selectMusic,
+        musicList
+    } = useContext(AppContext);
     return (
         <>
             <div className={styles.pageContainer}>
                 <MusicList
-                    musics={musics}
-                    selectedMusic={musics[0]}
-                    onSelect={() => { }}
+                    musics={musicList}
+                    selectedMusic={selectedMusic}
+                    onSelect={selectMusic}
                 />
-                <Audioplayer music={musics[0]} onComplete={() => { console.log('Finish') }} />
+                <Audioplayer
+                 music={selectedMusic} 
+                 onComplete={() => { console.log('Finish') }} 
+                 />
             </div>
         </>
     )

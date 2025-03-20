@@ -3,6 +3,7 @@ import styles from './MusicList.module.css'
 import { TimeService } from '../../../../data/services/TimeService';
 
 export default function MusicList(props) {
+
     function isSelected(music) {
         return props.selectedMusic === music ? styles.selected : '';
     }
